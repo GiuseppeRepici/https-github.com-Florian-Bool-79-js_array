@@ -10,15 +10,17 @@
 .btnavanti{
     position: absolute;
     top: 2px;
-    left: 260px;
+    left: 470px;
     width: 80px;
+    z-index: 2;
 }
 
 .btnindietro{
     position: absolute;
     bottom: 2px;
-    left: 260px;
+    left: 470px;
     width: 80px;
+    z-index: 2;
 }
 
 .active{
