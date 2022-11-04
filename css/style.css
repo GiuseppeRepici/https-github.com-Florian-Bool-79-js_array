@@ -30,7 +30,7 @@
 .container-laterale{
     position: absolute;
     top:  0;
-    right: 176px;
+    left: 420px;
     width: 180px;
     height: 100%;
     display: flex;
