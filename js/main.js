@@ -7,6 +7,8 @@ const listaimage = [
 ]
 
 let i=0;
+let z=0;
+let x=1;
 const image1 = document.getElementById("imgcontainer");
 image1.innerHTML += `<img src="${listaimage[i]}" class="image" id="">`;
 
@@ -19,13 +21,12 @@ for (i=1;i<listaimage.length;i++ ){
 const btnAvanti = document.getElementById("btn1");
 
 btnAvanti.addEventListener("click" , 
-function(){
-    let z=0;
+function (){
     const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
     oldImg.classList.add( "none" );
     z++;
-    let x = 0;
-    x++;
+    
     const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
     newImg.classList.remove( "none" );
+    x++;
 })
