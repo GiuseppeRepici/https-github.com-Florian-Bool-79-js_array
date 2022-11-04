@@ -7,64 +7,49 @@ const listaimage = [
 ]
 
 
-let z=0;
-let x=1;
-const image1 = document.getElementById("imgcontainer");
-image1.innerHTML += `<img src="${listaimage[z]}" class="image" id="">`;
+let x=0;
 
-for (i=1;i<listaimage.length;i++ ){
-    image1.innerHTML += `<img src="${listaimage[i]}" class="image none" id="" >`;
+const image1 = document.getElementById("imgcontainer");
+//image1.innerHTML += `<img src="${listaimage[x]}" class="image active" id="immagine">`;
+
+for (i=0;i<listaimage.length;i++ ){
+    image1.innerHTML += `<img src="${listaimage[i]}" class="image" id="" >`;
     console.log(image1);
 }
 
+const oldImg = document.querySelector(`.containerimage :nth-child(${(x + 1)})`);
+oldImg.classList.add( "active" );
 
 const btnAvanti = document.getElementById("btn1");
 const btnIndietro = document.getElementById("btn2");
 
 btnAvanti.addEventListener("click" , 
 function (){
-    if(z<4) {
-        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
-        oldImg.classList.add( "none" );
-        z++;
-        
-        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
-        newImg.classList.remove( "none" );
-        x++;
-    } else {
-        z = 4;
-        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
-        oldImg.classList.add( "none" );
-        z = 0;
+    
+    // x è il valore vecchio
+    // es. vale x = 0
+    // è l'indice dlel'immagine che devi cancellare
+    const oldImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    oldImg.classList.remove( "active" );
+
+    // x = 1
+    x++;
+    if(x> (listaimage.length - 1) ){
         x = 0;
-        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
-        newImg.classList.remove( "none" );
-        x++;
-        
     }
-    console.log(z);
+    const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    newImg.classList.add( "active" );
 })
 
 btnIndietro.addEventListener("click" , 
 function (){
-    if(z>0 && x>1){ 
-        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
-        oldImg.classList.add( "none" );
-        z--;
-
-        const newImg = document.querySelector(`.containerimage :nth-child(${x - 1})`);
-        newImg.classList.remove( "none" );
-        x--;
-    } else{
-        z=0;
-        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
-        oldImg.classList.add( "none" );
-        z = 4;
-        x = 6;
-        const newImg = document.querySelector(`.containerimage :nth-child(${x - 1})`);
-        newImg.classList.remove( "none" );
-        x--;
+    const oldImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    oldImg.classList.remove( "active" );
+    x--;
+    if(x<0){
+        x=4
     }
-    console.log(z);
-
+    const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+    newImg.classList.add( "active" );
 })
+

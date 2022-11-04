@@ -1,5 +1,5 @@
 .image{
-    display: block;
+    display: none;
     width: 400px;
 }
 
@@ -21,6 +21,7 @@
     width: 80px;
 }
 
-.none{
-    display: none;
+.active{
+    display: block;
 }
+
