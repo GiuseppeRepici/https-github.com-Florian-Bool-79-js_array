@@ -22,11 +22,23 @@ const btnAvanti = document.getElementById("btn1");
 
 btnAvanti.addEventListener("click" , 
 function (){
-    const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
-    oldImg.classList.add( "none" );
-    z++;
-    
-    const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
-    newImg.classList.remove( "none" );
-    x++;
+    if(z<4) {
+        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
+        oldImg.classList.add( "none" );
+        z++;
+        
+        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+        newImg.classList.remove( "none" );
+        x++;
+    } else {
+        z = 4;
+        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
+        oldImg.classList.add( "none" );
+        z = 0;
+        x = 0;
+        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+        newImg.classList.remove( "none" );
+        x++;
+        
+    }
 })
