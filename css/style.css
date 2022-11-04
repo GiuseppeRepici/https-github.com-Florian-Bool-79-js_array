@@ -1,0 +1,26 @@
+.image{
+    display: block;
+    width: 400px;
+}
+
+#container{
+    position: relative;
+}
+
+.btnavanti{
+    position: absolute;
+    top: 2px;
+    left: 160px;
+    width: 80px;
+}
+
+.btnindietro{
+    position: absolute;
+    bottom: 2px;
+    left: 160px;
+    width: 80px;
+}
+
+.none{
+    display: none;
+}
