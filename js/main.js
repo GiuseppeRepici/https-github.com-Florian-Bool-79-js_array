@@ -6,11 +6,11 @@ const listaimage = [
     "img/05.webp",
 ]
 
-let i=0;
+
 let z=0;
 let x=1;
 const image1 = document.getElementById("imgcontainer");
-image1.innerHTML += `<img src="${listaimage[i]}" class="image" id="">`;
+image1.innerHTML += `<img src="${listaimage[z]}" class="image" id="">`;
 
 for (i=1;i<listaimage.length;i++ ){
     image1.innerHTML += `<img src="${listaimage[i]}" class="image none" id="" >`;
@@ -42,11 +42,12 @@ function (){
         x++;
         
     }
+    console.log(z);
 })
 
 btnIndietro.addEventListener("click" , 
 function (){
-    if(z>0){ 
+    if(z>0 && x>1){ 
         const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
         oldImg.classList.add( "none" );
         z--;
@@ -59,10 +60,11 @@ function (){
         const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
         oldImg.classList.add( "none" );
         z = 4;
-        x = 4;
+        x = 6;
         const newImg = document.querySelector(`.containerimage :nth-child(${x - 1})`);
         newImg.classList.remove( "none" );
         x--;
     }
+    console.log(z);
 
 })
