@@ -60,7 +60,7 @@ function (){
         oldImg.classList.add( "none" );
         z = 4;
         x = 4;
-        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+        const newImg = document.querySelector(`.containerimage :nth-child(${x - 1})`);
         newImg.classList.remove( "none" );
         x--;
     }
