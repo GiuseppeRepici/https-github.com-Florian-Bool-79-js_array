@@ -19,6 +19,7 @@ for (i=1;i<listaimage.length;i++ ){
 
 
 const btnAvanti = document.getElementById("btn1");
+const btnIndietro = document.getElementById("btn2");
 
 btnAvanti.addEventListener("click" , 
 function (){
@@ -41,4 +42,27 @@ function (){
         x++;
         
     }
+})
+
+btnIndietro.addEventListener("click" , 
+function (){
+    if(z>0){ 
+        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
+        oldImg.classList.add( "none" );
+        z--;
+
+        const newImg = document.querySelector(`.containerimage :nth-child(${x - 1})`);
+        newImg.classList.remove( "none" );
+        x--;
+    } else{
+        z=0;
+        const oldImg = document.querySelector(`.containerimage :nth-child(${z + 1})`);
+        oldImg.classList.add( "none" );
+        z = 4;
+        x = 4;
+        const newImg = document.querySelector(`.containerimage :nth-child(${x + 1})`);
+        newImg.classList.remove( "none" );
+        x--;
+    }
+
 })
